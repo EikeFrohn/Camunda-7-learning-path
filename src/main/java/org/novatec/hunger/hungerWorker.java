@@ -1,2 +1,4 @@
-package org.novatec.hunger;public class hungerWorker {
+package org.novatec.hunger;
+
+public class hungerWorker {
 }
