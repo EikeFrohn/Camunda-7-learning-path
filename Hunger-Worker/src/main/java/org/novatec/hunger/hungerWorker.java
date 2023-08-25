@@ -18,7 +18,7 @@ public class hungerWorker {
                     .build();
 
             // subscribe to an external task topic as specified in the process
-            client.subscribe("decide-food")
+            client.subscribe("foodDecision")
                     .lockDuration(1000) // the default lock duration is 20 seconds, but you can override this
                     .handler((externalTask, externalTaskService) -> {
                         // Put your business logic here
