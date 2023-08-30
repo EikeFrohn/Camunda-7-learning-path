@@ -1,7 +1,16 @@
 package org.novatec;
 
+import org.camunda.bpm.application.*;
 import org.camunda.bpm.application.ProcessApplication;
 import org.camunda.bpm.application.impl.ServletProcessApplication;
+import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
+import org.camunda.bpm.engine.*;
+import org.camunda.bpm.engine.ProcessEngine;
+import org.camunda.bpm.engine.variable.VariableMap;
+import org.camunda.bpm.engine.variable.Variables;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @ProcessApplication("Dinner App DMN")
 public class DinnerApplication extends ServletProcessApplication

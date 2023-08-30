@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>DMN-dinner</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>DMN-dinner</name>
     <url>http://maven.apache.org</url>

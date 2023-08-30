@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.event.EventListener;
+import org.novatec.*;
+
 
 @SpringBootApplication
 @EnableProcessApplication
@@ -14,13 +16,17 @@ import org.springframework.context.event.EventListener;
 public class BPM {
     public static void main(String... args) {
         SpringApplication.run(BPM.class, args);
-
     }
+
+
+
     @Autowired
     private RuntimeService runtimeService;
 
     @EventListener
     private void processPostDeploy(PostDeployEvent event) {
         runtimeService.startProcessInstanceByKey("foodDecision");
+        DinnerApplication dinnerApplication = new DinnerApplication();
+        dinnerApplication.evaluateDecisionTable(event.getProcessEngine());
     }
 }
